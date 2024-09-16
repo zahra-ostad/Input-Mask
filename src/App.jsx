@@ -11,19 +11,19 @@ const handleChange=(e)=>{
 
 setError("")
 
-const first=cities.filter((city)=>{
+const filteredData=cities.filter((city)=>{
 return city.startsWith(value)
  
 })
 
-if(first.length > 1 && value === ""){
+if(filteredData.length > 1 && value === ""){
    setHint([])
    setError("Please enter something !")
-}else if(first.length > 1){
-   const nameOfCity=first[0]
+}else if(filteredData.length > 1){
+   const nameOfCity=filteredData[0]
    setHint(([nameOfCity]))
-}else if(first.length === 1){
-   const nameOfCity=first[0]
+}else if(filteredData.length === 1){
+   const nameOfCity=filteredData[0]
 setHint(([nameOfCity]))
 }else{
    setHint([])
